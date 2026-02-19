@@ -1,0 +1,135 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-team-signup-form-that-collects-gamer-tag-email-preferred-game-role-and-experience-level-for-joining-savage-elite-gaming-team",
+      "featureTitle": "Create a team signup form that collects gamer tag, email, preferred game role, and experience level for joining Savage Elite gaming team",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/TeamSignupForm.tsx",
+        "frontend/src/pages/TeamSignup.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-merch-shop-displaying-savage-elite-branded-products-with-product-images-names-descriptions-and-prices",
+      "featureTitle": "Build a merch shop displaying Savage Elite branded products with product images, names, descriptions, and prices",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/MerchCard.tsx",
+        "frontend/src/components/MerchGrid.tsx",
+        "frontend/src/pages/MerchShop.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-shopping-cart-functionality-allowing-users-to-add-merch-items-view-cart-contents-and-adjust-quantities",
+      "featureTitle": "Implement shopping cart functionality allowing users to add merch items, view cart contents, and adjust quantities",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Cart.tsx",
+        "frontend/src/components/CartItem.tsx",
+        "frontend/src/components/MerchCard.tsx",
+        "frontend/src/pages/CartPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-an-admin-interface-to-manage-team-member-signups-and-view-submitted-applications",
+      "featureTitle": "Create an admin interface to manage team member signups and view submitted applications",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AccessDeniedScreen.tsx",
+        "frontend/src/components/AdminSignupList.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-bold-gaming-focused-visual-theme-with-aggressive-colors-blacks-reds-neon-accents-and-edgy-typography-that-reflects-the-savage-elite-brand-identity-consistently-across-all-pages",
+      "featureTitle": "Design a bold, gaming-focused visual theme with aggressive colors (blacks, reds, neon accents) and edgy typography that reflects the 'Savage Elite' brand identity consistently across all pages",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-display-generated-savage-elite-logo-and-merch-product-images-as-static-assets-from-frontend-public-assets-generated",
+      "featureTitle": "Display generated Savage Elite logo and merch product images as static assets from frontend/public/assets/generated",
+      "files": [
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/MerchCard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

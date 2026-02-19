@@ -1,0 +1,20 @@
+{
+  "frontend/src/App.tsx": "Main application component with TanStack Router setup, defining routes for shop, signup, cart, and admin pages, wrapped with ThemeProvider and Toaster for notifications.",
+  "frontend/src/components/Layout.tsx": "Main layout component with sticky header featuring Savage Elite logo, navigation menu, login button, footer with attribution, and profile setup modal for new users.",
+  "frontend/src/components/LoginButton.tsx": "Authentication button component that handles Internet Identity login/logout with loading states and visual feedback.",
+  "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog for new users to set up their profile with name and gamer tag fields, displayed on first login.",
+  "frontend/src/pages/MerchShop.tsx": "Merch shop page displaying the store title and rendering the MerchGrid component with all available products.",
+  "frontend/src/pages/TeamSignup.tsx": "Team signup page that shows the application form for authenticated users or displays existing signup status if already submitted.",
+  "frontend/src/pages/CartPage.tsx": "Shopping cart page that requires authentication and displays the Cart component with all cart items and checkout functionality.",
+  "frontend/src/pages/AdminDashboard.tsx": "Admin dashboard page with access control that displays the AdminSignupList component for viewing all team applications.",
+  "frontend/src/components/TeamSignupForm.tsx": "Form component for team signup with fields for gamer tag, email, preferred role, and experience level with validation and submission handling.",
+  "frontend/src/components/MerchGrid.tsx": "Grid layout component that fetches and displays all merchandise items using MerchCard components with loading and error states.",
+  "frontend/src/components/MerchCard.tsx": "Product card component displaying merch item image, name, description, price, and add-to-cart button with authentication check.",
+  "frontend/src/components/Cart.tsx": "Shopping cart component displaying all cart items, total price calculation, clear cart button, and checkout button.",
+  "frontend/src/components/CartItem.tsx": "Individual cart item component with product details, quantity controls (increase/decrease/remove), and subtotal calculation.",
+  "frontend/src/components/AdminSignupList.tsx": "Admin component displaying all team signup applications in a table format with gamer tag, email, role, and experience level.",
+  "frontend/src/components/AccessDeniedScreen.tsx": "Access denied screen component shown to non-admin users attempting to access restricted admin areas.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for all backend operations including user profiles, team signups, merch items, shopping cart, and admin functions with proper cache invalidation.",
+  "frontend/src/index.css": "Global styles with OKLCH color system featuring dark gaming theme with red, green, and yellow accents, custom fonts (Rajdhani and Orbitron), and glow effects.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with gaming theme colors, custom fonts (Rajdhani and Orbitron), glow shadow utilities, and design tokens."
+}

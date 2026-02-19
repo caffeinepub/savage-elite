@@ -1,0 +1,214 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Savage Elite Gaming Team Signup and Merch Shop Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create team signup form collecting gamer tag, email, preferred game role, and experience level",
+      "acceptanceCriteria": [
+        "Form includes fields for gamer tag, email, preferred game role, and experience level",
+        "Form submission stores member data in the backend",
+        "User receives confirmation after successful signup",
+        "Form validates required fields before submission"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useTeamSignup.ts",
+          "operation": "create",
+          "description": "Create React Query hook for team signup operations. Include mutation for submitTeamSignup that calls the backend function, query for getTeamSignup to check existing signup status, and proper error handling with success notifications."
+        },
+        {
+          "path": "frontend/src/components/TeamSignupForm.tsx",
+          "operation": "create",
+          "description": "Create team signup form component with fields for gamer tag (text input), email (email input), preferred game role (select/dropdown), and experience level (select/dropdown). Use useTeamSignup hook for submission. Include form validation for required fields, loading states, error handling, and success confirmation message. Style consistently with gaming theme using Tailwind CSS classes."
+        },
+        {
+          "path": "frontend/src/pages/TeamSignup.tsx",
+          "operation": "create",
+          "description": "Create team signup page that renders the TeamSignupForm component. Include page title, introductory text about joining Savage Elite, and appropriate layout. Check if user already submitted signup using getTeamSignup query and show confirmation message if already signed up."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /signup pointing to TeamSignup page. Ensure route is accessible to authenticated users."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build merch shop displaying Savage Elite branded products with images, names, descriptions, and prices",
+      "acceptanceCriteria": [
+        "Shop displays multiple merch items in a grid layout",
+        "Each product shows image, name, description, and price",
+        "Products are stored and retrieved from backend",
+        "Users can view product details"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useMerchItems.ts",
+          "operation": "create",
+          "description": "Create React Query hook for fetching merch items. Include query for getAllMerchItems from backend. Handle loading and error states appropriately."
+        },
+        {
+          "path": "frontend/src/components/MerchCard.tsx",
+          "operation": "create",
+          "description": "Create merch card component displaying a single product with image (rendered from frontend/public/assets/generated using the generated filenames: merch-tshirt.dim_800x800.png, merch-hoodie.dim_800x800.png, merch-mousepad.dim_800x800.png, merch-cap.dim_800x800.png), product name, description, and price formatted as currency. Include add to cart button that triggers cart functionality. Style with gaming theme using Tailwind CSS."
+        },
+        {
+          "path": "frontend/src/components/MerchGrid.tsx",
+          "operation": "create",
+          "description": "Create merch grid component that uses useMerchItems hook to fetch and display products in a responsive grid layout. Map over merch items and render MerchCard for each. Handle loading state with skeleton loaders and error state with user-friendly message."
+        },
+        {
+          "path": "frontend/src/pages/MerchShop.tsx",
+          "operation": "create",
+          "description": "Create merch shop page that renders MerchGrid component. Include page title, shop introduction text, and appropriate layout consistent with gaming theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /shop pointing to MerchShop page. Ensure route is publicly accessible."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement shopping cart functionality for adding items, viewing contents, and adjusting quantities",
+      "acceptanceCriteria": [
+        "Users can add products to cart from shop page",
+        "Cart displays all added items with quantities and subtotals",
+        "Users can increase, decrease, or remove items from cart",
+        "Cart shows total price calculation"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCart.ts",
+          "operation": "create",
+          "description": "Create React Query hook for cart operations. Include query for getCart, mutations for addToCart, updateCartItem, and clearCart. Implement optimistic updates for better UX. Include logic to invalidate cart queries after mutations."
+        },
+        {
+          "path": "frontend/src/components/CartItem.tsx",
+          "operation": "create",
+          "description": "Create cart item component displaying product details (name, image, price), current quantity, and controls for increasing/decreasing quantity or removing item. Use updateCartItem mutation from useCart hook. Calculate and display line item subtotal. Style with gaming theme."
+        },
+        {
+          "path": "frontend/src/components/Cart.tsx",
+          "operation": "create",
+          "description": "Create cart component that uses useCart hook to fetch cart data. Render list of CartItem components for each cart item. Display total price calculation at bottom. Include clear cart button. Handle empty cart state with appropriate message. Fetch merch items to resolve item details from cart item IDs."
+        },
+        {
+          "path": "frontend/src/pages/CartPage.tsx",
+          "operation": "create",
+          "description": "Create cart page that renders Cart component. Include page title and appropriate layout. Show loading state while cart data is being fetched."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /cart pointing to CartPage. Ensure route requires authentication."
+        },
+        {
+          "path": "frontend/src/components/MerchCard.tsx",
+          "operation": "modify",
+          "description": "Wire add to cart button to use addToCart mutation from useCart hook. Show loading state on button during mutation. Display success feedback after adding item."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Create admin interface to manage team member signups and view submitted applications",
+      "acceptanceCriteria": [
+        "Admin can view list of all signup submissions",
+        "Each submission displays gamer tag, email, role, and experience level",
+        "Admin can approve or reject applications",
+        "Interface is accessible only to authenticated admin users"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useAdminSignups.ts",
+          "operation": "create",
+          "description": "Create React Query hook for admin signup management. Include query for getAllSignups that fetches all team signup submissions from backend. Handle authorization errors appropriately."
+        },
+        {
+          "path": "frontend/src/components/AdminSignupList.tsx",
+          "operation": "create",
+          "description": "Create admin signup list component that uses useAdminSignups hook. Display all signups in a table or list format showing gamer tag, email, preferred role, and experience level for each submission. Style with gaming theme using Tailwind CSS."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "create",
+          "description": "Create admin dashboard page that renders AdminSignupList component. Include page title and appropriate admin layout. Use authorization component to verify admin role and protect access. Show AccessDeniedScreen for non-admin users."
+        },
+        {
+          "path": "frontend/src/components/AdminRoute.tsx",
+          "operation": "create",
+          "description": "Create AdminRoute wrapper component that checks if current user is admin using isCallerAdmin backend query. Use authorization component's role checking capability. Show loading state while checking role. Redirect or show AccessDeniedScreen for non-admin users."
+        },
+        {
+          "path": "frontend/src/components/AccessDeniedScreen.tsx",
+          "operation": "create",
+          "description": "Create access denied screen component displaying user-friendly message when unauthorized users attempt to access admin features. Style consistently with gaming theme."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /admin pointing to AdminDashboard page wrapped in AdminRoute component to ensure admin-only access."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Design bold gaming-focused visual theme with aggressive colors and edgy typography reflecting Savage Elite brand",
+      "acceptanceCriteria": [
+        "Color palette uses dark backgrounds with vibrant accent colors appropriate for gaming",
+        "Typography choices convey strength and competitive gaming culture",
+        "Visual style is consistent across signup form, merch shop, and all UI components",
+        "Design includes gaming-appropriate visual elements (geometric patterns, sharp edges, etc.)"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global CSS with gaming theme including dark backgrounds (blacks, deep grays), vibrant accent colors (reds, neon greens, electric blues), and custom CSS variables for theme consistency. Add utility classes for gaming-style borders, shadows, and effects like glows. Import gaming-appropriate font families that convey competitive edge."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind configuration with Savage Elite brand colors in theme.extend.colors (primary reds, secondary neon accents, dark backgrounds). Configure gaming-appropriate font families in theme.extend.fontFamily. Add custom spacing, border radius values for sharp/angular design aesthetic. Configure box shadows for glow effects."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create main layout component with navigation header, content area, and footer. Include Savage Elite branding elements, navigation links to shop, signup, cart, and admin (if admin). Use dark gaming theme colors and aggressive styling with sharp edges. Include LoginButton for authentication."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap all routes with Layout component to ensure consistent theme and navigation across all pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Display generated Savage Elite logo and merch product images as static assets",
+      "acceptanceCriteria": [
+        "Logo is displayed prominently in the header/navigation",
+        "Merch product images are rendered in the shop interface",
+        "All images are served from frontend/public/assets/generated directory",
+        "Images load correctly without backend routing"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "modify",
+          "description": "Add Savage Elite logo image to header/navigation using the generated file frontend/public/assets/generated/savage-elite-logo.dim_512x512.png. Ensure logo is prominently displayed and links to home/shop page."
+        },
+        {
+          "path": "frontend/src/components/MerchCard.tsx",
+          "operation": "modify",
+          "description": "Ensure product images reference the exact generated filenames from frontend/public/assets/generated: merch-tshirt.dim_800x800.png, merch-hoodie.dim_800x800.png, merch-mousepad.dim_800x800.png, merch-cap.dim_800x800.png. Map backend imageUrl field to these static asset paths. Include alt text for accessibility."
+        }
+      ]
+    }
+  ]
+}

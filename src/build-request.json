@@ -1,0 +1,136 @@
+{
+  "kind": "build_request",
+  "title": "Create Savage Elite gaming team signup and merch shop",
+  "projectName": "Savage Elite",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a team signup form that collects gamer tag, email, preferred game role, and experience level for joining Savage Elite gaming team",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "Make a sign up app where you sing up for my gaming team called savage elite"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form includes fields for gamer tag, email, preferred game role, and experience level",
+        "Form submission stores member data in the backend",
+        "User receives confirmation after successful signup",
+        "Form validates required fields before submission"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build a merch shop displaying Savage Elite branded products with product images, names, descriptions, and prices",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "make a merch shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Shop displays multiple merch items in a grid layout",
+        "Each product shows image, name, description, and price",
+        "Products are stored and retrieved from backend",
+        "Users can view product details"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement shopping cart functionality allowing users to add merch items, view cart contents, and adjust quantities",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "make a merch shop"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Users can add products to cart from shop page",
+        "Cart displays all added items with quantities and subtotals",
+        "Users can increase, decrease, or remove items from cart",
+        "Cart shows total price calculation"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create an admin interface to manage team member signups and view submitted applications",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin can view list of all signup submissions",
+        "Each submission displays gamer tag, email, role, and experience level",
+        "Admin can approve or reject applications",
+        "Interface is accessible only to authenticated admin users"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Design a bold, gaming-focused visual theme with aggressive colors (blacks, reds, neon accents) and edgy typography that reflects the 'Savage Elite' brand identity consistently across all pages",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Color palette uses dark backgrounds with vibrant accent colors appropriate for gaming",
+        "Typography choices convey strength and competitive gaming culture",
+        "Visual style is consistent across signup form, merch shop, and all UI components",
+        "Design includes gaming-appropriate visual elements (geometric patterns, sharp edges, etc.)"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Display generated Savage Elite logo and merch product images as static assets from frontend/public/assets/generated",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo is displayed prominently in the header/navigation",
+        "Merch product images are rendered in the shop interface",
+        "All images are served from frontend/public/assets/generated directory",
+        "Images load correctly without backend routing"
+      ]
+    }
+  ],
+  "constraints": [
+    "Use single-actor Motoko architecture for all backend logic",
+    "Do not modify immutable frontend paths (useInternetIdentity, useActor, main.tsx, components/ui)",
+    "Use React with TypeScript, Tailwind CSS, and React Query for frontend",
+    "Store all team signup and merch data in the main Motoko actor"
+  ],
+  "nonGoals": [
+    "Payment processing integration (Stripe or external payment gateways)",
+    "Real-time chat or messaging features",
+    "Email notifications for signup confirmations",
+    "Inventory management system",
+    "Order fulfillment tracking"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Savage Elite gaming team logo with aggressive, competitive styling featuring sharp edges and bold typography (savage-elite-logo.dim_512x512.png)",
+      "Gaming t-shirt mockup with Savage Elite branding on black fabric (merch-tshirt.dim_800x800.png)",
+      "Gaming hoodie mockup with Savage Elite logo on dark fabric (merch-hoodie.dim_800x800.png)",
+      "Gaming mouse pad with Savage Elite design and vibrant colors (merch-mousepad.dim_800x800.png)",
+      "Gaming cap/hat mockup with Savage Elite embroidered logo (merch-cap.dim_800x800.png)"
+    ],
+    "edits": []
+  }
+}

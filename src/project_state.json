@@ -1,0 +1,76 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "A sign up app for the gaming team 'Savage Elite' with an integrated merch shop",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Savage Elite gaming team logo with aggressive, competitive styling featuring sharp edges and bold typography (savage-elite-logo.dim_512x512.png)\n- Gaming t-shirt mockup with Savage Elite branding on black fabric (merch-tshirt.dim_800x800.png)\n- Gaming hoodie mockup with Savage Elite logo on dark fabric (merch-hoodie.dim_800x800.png)\n- Gaming mouse pad with Savage Elite design and vibrant colors (merch-mousepad.dim_800x800.png)\n- Gaming cap/hat mockup with Savage Elite embroidered logo (merch-cap.dim_800x800.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-team-signup-form-that-collects-gamer-tag-email-preferred-game-role-and-experience-level-for-joining-savage-elite-gaming-team",
+      "title": "Create a team signup form that collects gamer tag, email, preferred game role, and experience level for joining Savage Elite gaming team",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-merch-shop-displaying-savage-elite-branded-products-with-product-images-names-descriptions-and-prices",
+      "title": "Build a merch shop displaying Savage Elite branded products with product images, names, descriptions, and prices",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-shopping-cart-functionality-allowing-users-to-add-merch-items-view-cart-contents-and-adjust-quantities",
+      "title": "Implement shopping cart functionality allowing users to add merch items, view cart contents, and adjust quantities",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-interface-to-manage-team-member-signups-and-view-submitted-applications",
+      "title": "Create an admin interface to manage team member signups and view submitted applications",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-design-a-bold-gaming-focused-visual-theme-with-aggressive-colors-blacks-reds-neon-accents-and-edgy-typography-that-reflects-the-savage-elite-brand-identity-consistently-across-all-pages",
+      "title": "Design a bold, gaming-focused visual theme with aggressive colors (blacks, reds, neon accents) and edgy typography that reflects the 'Savage Elite' brand identity consistently across all pages",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-generated-savage-elite-logo-and-merch-product-images-as-static-assets-from-frontend-public-assets-generated",
+      "title": "Display generated Savage Elite logo and merch product images as static assets from frontend/public/assets/generated",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Sign up form for Savage Elite gaming team",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Merch shop functionality",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Savage Elite",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
